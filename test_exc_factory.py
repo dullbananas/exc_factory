@@ -8,3 +8,10 @@ def test_attrs():
 	assert str(e) == 'hotel'
 	assert e.a == 'trivago'
 	assert e.b == None
+
+
+def test_default_attrs():
+	Foo = make_exception('Foo')
+	e = Foo('hi')
+	assert str(e) == 'hi'
+	assert e.__dict__ == {}
